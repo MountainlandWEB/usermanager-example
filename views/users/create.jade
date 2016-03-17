@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1 Create User
+    form(id="createUserForm", method="POST", action="/users/create")
+        label(for="id") ID:
+        input(type="number", id="id", name="id")
+        label(for="name") Name:
+        input(type="text", id="name", name="name")
+        label(for="email") Email:
+        input(type="email", id="email", name="email")
+        input(type="submit", value="Submit")

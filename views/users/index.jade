@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1 Users
+    a(href="/users/create") Create user
+    table
+        thead
+            tr
+                th ID
+                th Name
+                th Email
+                th
+        tbody
+            each user in users
+                tr
+                    td
+                        a(href="/users/edit/#{user.id}")= user.id
+                    td= user.name
+                    td= user.email
+                    td
+                        form(method="POST", action="/users/delete/#{user.id}")
+                            input(type="submit", value="Delete")
